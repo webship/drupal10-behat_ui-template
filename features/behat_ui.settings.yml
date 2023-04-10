@@ -1,0 +1,15 @@
+behat_ui_behat_config_path: DRUPAL_PROJECT_PATH
+behat_ui_behat_bin_path: 'php ./bin/behat'
+behat_ui_behat_config_file: behat.yml
+behat_ui_behat_features_path: features
+behat_ui_autoload_path: vendor/autoload.php
+behat_ui_html_report: true
+behat_ui_html_report_dir: DRUPAL_PROJECT_PATH/features/reports
+behat_ui_log_report_dir: DRUPAL_PROJECT_PATH/features/logs
+behat_ui_editing_mode: "free_text"
+behat_ui_http_user: ""
+behat_ui_http_password: ""
+behat_ui_http_auth_headless_only: true
+behat_ui_save_user_testing_features: false
+behat_ui_needs_browser: true
+behat_ui_behat_tags: "javascript|Selenium + JavaScript\r\napi|Drupal API\r\nlocal|Local\r\ndevelopment|Development\r\nstaging|Staging and testing\r\nproduction|Production\r\ninit|Initialization\r\ncleanup|Cleanup"
