@@ -34,7 +34,7 @@ base_url: 'PROJECT_BASE_URL'
   
 ```
 selenium2:
-  wd_host: robot1.dev.in.vardot.com:4445/wd/hub
+  wd_host: 127.0.0.1:4444/wd/hub
 ```
 
 5. Copy the `"features"` folder to the root project directory.
