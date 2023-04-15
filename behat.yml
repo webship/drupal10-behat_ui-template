@@ -12,16 +12,21 @@ default:
         - DrevOps\BehatScreenshotExtension\Context\ScreenshotContext
   formatters:
     pretty:
+      verbose: true
+      paths: false
+      snippets: false
     html:
+      verbose: true
+      paths: false
+      snippets: false
       output_path: "%paths.base%/features/reports/"
   extensions:
     Behat\MinkExtension:
       files_path: "%paths.base%/features/assets/"
-      goutte: ~
       selenium2:
         wd_host: SELENIUM_HOST
         capabilities:
-          browser: 'chrome'
+          browser: "chrome"
           nativeEvents: true
           marionette: true
           browserName: chrome
@@ -35,8 +40,8 @@ default:
               args:
                 - "--headless"
                 - "--start-maximized"
+                - "--window-size=1920,1080"
                 - "--disable-gpu"
-                - "--window-size=1600,1200"
                 - "--no-sandbox"
                 - "--disable-dev-shm-usage"
                 - "--disable-setuid-sandbox"
@@ -48,15 +53,16 @@ default:
                 - "--disable-extensions"
                 - "--incognito"
                 - "--disable-infobars"
+                - "--disable-popup-blocking"
                 - "--remote-debugging-port=9222"
                 - "--allowed-ips=*"
                 - "--whitelisted-ips=*"
-      base_url: 'PROJECT_BASE_URL'
-      browser_name: 'chrome'
+      base_url: "PROJECT_BASE_URL"
+      browser_name: "chrome"
       javascript_session: selenium2
     Drupal\DrupalExtension:
       blackbox: ~
-      api_driver: 'drupal'
+      api_driver: "drupal"
       region_map:
         content: ".main-container"
         footer: "#footer"
@@ -65,10 +71,10 @@ default:
         right sidebar: "#aside-region"
         field body: "#edit-body-wrapper"
       selectors:
-        message_selector: '.messages'
-        error_message_selector: '.messages.error'
-        success_message_selector: '.messages.status'
-        warning_message_selector: '.messages.warning'
+        message_selector: ".messages"
+        error_message_selector: ".messages.error"
+        success_message_selector: ".messages.status"
+        warning_message_selector: ".messages.warning"
     webship\BehatHTMLFormatter\BehatHTMLFormatterExtension:
       name: html
       renderer: Twig,Behat2
@@ -77,7 +83,7 @@ default:
       print_outp: false
       loop_break: false
     DrevOps\BehatScreenshotExtension:
-      dir: '%paths.base%/features/screenshots'
+      dir: "%paths.base%/features/screenshots"
       fail: true
-      fail_prefix: 'failed_'
+      fail_prefix: "failed_"
       purge: false
